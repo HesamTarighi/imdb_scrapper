@@ -2,7 +2,7 @@
     // node_modules
         const express = require('express')
     // Custom modules
-        const {searchById, advancedSearch} = require('../modules/scrap')
+        const {searchById, searchByTitle, advancedSearch} = require('../modules/scrap')
 
 // Call
     const route = express.Router()
@@ -12,7 +12,11 @@
         searchById(req.params.imdbId, info => res.send(info))
     })
 
-    route.get('/api/search/', (req, res) => {
+    route.get('/api/search/:title', (req, res) => {
+        searchByTitle(req.params.title, info => res.send(info))
+    })
+
+    route.get('/api/advance_search/', (req, res) => {
         advancedSearch(req.query, info => res.send(info))
     })
 
