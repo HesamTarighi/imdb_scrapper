@@ -1,6 +1,5 @@
 const cheerio = require("cheerio")
 const axios = require("axios")
-const osmosis = require('osmosis')
 const base_url = 'https://www.imdb.com/'
 
 // Change poster size action
@@ -95,7 +94,7 @@ const base_url = 'https://www.imdb.com/'
             // Change data info action
                 function changeDataInfo() {
                     for (let i = 0; i < data.length; i++) {
-                        // changePosterSize(data[i].poster, 600, 908, poster => data[i].poster = poster)
+                        changePosterSize(data[i].poster, 600, 908, poster => data[i].poster = poster)
                     }
                 }
             changeDataInfo()
