@@ -16,7 +16,7 @@ const base_url = 'https://www.imdb.com/'
 
             // Get content information
                 const data = {
-                    title: $('.eKrKux').text(),
+                    title: $('.fjPRnj h1').text(),
                     poster: $('.ipc-media img').attr('src'),
                     rating:  $('.jGRxWM').text().length >= 3 ? $('.jGRxWM').text().slice(0, 3) : $('.jGRxWM').text(),
                     description: $('.gXUyNh').text(),
@@ -82,9 +82,10 @@ const base_url = 'https://www.imdb.com/'
 
                         // Get content information
                             data.push({
-                                title: list_childs(' .result_text a').text(),
+                                title: list_childs('.result_text a').text(),
                                 poster: list_childs('.primary_photo img').attr('src'),
                                 release: list_childs('.result_text').text(),
+                                id: list_childs('.result_text a').attr('href').match(/tt+\d+/)
                             })
 
                     })
@@ -137,7 +138,7 @@ const base_url = 'https://www.imdb.com/'
                                 rating: list_childs('.ratings-imdb-rating').text(),
                                 description: list_childs('p:nth-child(4)').text(),
                                 time: list_childs('.runtime').text(),
-                                release: list_childs('.lister-item-year').text().match(/[0-9]+/).join(''),
+                                release: list_childs('.lister-item-year').text().match(/[0-9]+/),
                                 id: list_childs('.lister-item-image img').attr('data-tconst')
                             })
 
@@ -154,6 +155,7 @@ const base_url = 'https://www.imdb.com/'
 
                         changePosterSize(data[i].poster, 600, 908, poster => data[i].poster = poster)
                         data[i].genres = JSON.parse(JSON.stringify(data[i].genres.split(',')))
+                        data[i].release = data[i].release[0]
                     }
                 }
                 changeDataInfo()
