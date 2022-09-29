@@ -11,6 +11,3 @@ ___
 
 Advanced search queries are in this url:
 https://www.imdb.com/search/title/
-
-___
-Powered by **Hesam Tarighi**
