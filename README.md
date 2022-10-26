@@ -2,8 +2,8 @@
 
 **Document**
 
- - Search by title: https://imdbapi.cyclic.app/api/:title
- - Search by name: https://imdbapi.cyclic.app/api/:name
+ - Search by title: https://imdbapi.cyclic.app/api/title/:title
+ - Search by name: https://imdbapi.cyclic.app/api/search/:name
  - Advanced search: https://imdbapi.cyclic.app/api/advance_search/?query
 
 ___
