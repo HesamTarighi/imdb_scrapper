@@ -8,7 +8,7 @@ const base_url = 'https://www.imdb.com/'
     }
 
 // Search methods
-    function searchById(imdbId, callback) {
+    function searchByTitle(imdbId, callback) {
         new Promise(async (resolve, reject) => {
             // Get dom html and load cheerio
                 const html = await axios.get(base_url + 'title/' + imdbId + '/')
@@ -66,7 +66,7 @@ const base_url = 'https://www.imdb.com/'
             )
     }
     
-    function searchByTitle(title, callback) {
+    function searchByName(title, callback) {
         new Promise(async (resolve, reject) => {
             var data = []
 
@@ -171,7 +171,7 @@ const base_url = 'https://www.imdb.com/'
     }
 
 module.exports = {
-    searchById,
+    searchByName,
     searchByTitle,
     advancedSearch
 }

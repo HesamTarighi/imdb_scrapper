@@ -8,12 +8,12 @@
     const route = express.Router()
 
 // Routes
-    route.get('/api/title/:imdbId', (req, res) => {
-        searchById(req.params.imdbId, info => res.send(info))
+    route.get('/api/title/:title', (req, res) => {
+        searchByTitle(req.params.title, info => res.send(info))
     })
 
-    route.get('/api/search/:title', (req, res) => {
-        searchByTitle(req.params.title, info => res.send(info))
+    route.get('/api/search/:name', (req, res) => {
+        searchByName(req.params.name, info => res.send(info))
     })
 
     route.get('/api/advance_search/', (req, res) => {
